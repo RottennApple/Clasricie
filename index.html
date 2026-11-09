@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Clariscie</title>
+    <!-- Biblioteca Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Estilo Customizado -->
+    <link rel="stylesheet" href="css.css">
+    <script src="scripiti.js" defer></script>
+</head>
+<body>
+
+    <!-- Cortinas Teatrais de Revelação -->
+    <div class="curtain curtain-left" id="curtainLeft"></div>
+    <div class="curtain curtain-right" id="curtainRight"></div>
+
+    <!-- Imagem de Fundo Revelada -->
+    <div class="bg-revealed" id="bgRevealed"></div>
+
+    <!-- Interface Superior -->
+    <div class="interface animate__animated animate__fadeInDown">
+        <h1 id="titulo">Sinos aleatorios</h1>
+        <p id="texto">Toque em um dos sinos para abrir as cortinas...</p>
+        <button onclick="reiniciarCena()">Invocar Novos Sinos</button>
+    </div>
+
+    <!-- Container dos Sinos Gerados Aleatoriamente -->
+    <div id="bellContainer"></div>
+
+    <!-- Elemento de áudio para a sua música (Deixado em branco no src para você preencher) -->
+    <audio id="minhaMusica" src="63. The Third Sanctuary (DELTARUNE Chapter 3+4 Soundtrack) - Toby Fox_1.mp3"></audio>
+
+</body>
+</html>

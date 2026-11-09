@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    background: #0d0d11;
+    color: #ffffff;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Cortinas Veludo Teatral */
+.curtain {
+    position: fixed;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, #4a0000 0%, #8b0000 50%, #4a0000 100%);
+    box-shadow: 0 0 30px rgba(0,0,0,0.8);
+    z-index: 10;
+    transition: transform 1.8s cubic-bezier(0.77, 0, 0.175, 1);
+    border-bottom: 8px solid #ffd700;
+}
+
+.curtain-left {
+    left: 0;
+    border-right: 4px solid #2b0000;
+}
+
+.curtain-right {
+    right: 0;
+    border-left: 4px solid #2b0000;
+}
+
+/* Abertura das Cortinas */
+body.open .curtain-left {
+    transform: translateX(-100%);
+}
+
+body.open .curtain-right {
+    transform: translateX(100%);
+}
+
+/* Fundo Iluminado Revelado */
+.bg-revealed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(0,0,0,0.2), rgba(0,0,0,0.8)),
+                url('https://picsum.photos/id/1018/1920/1080') no-repeat center center/cover;
+    opacity: 0;
+    transform: scale(1.1);
+    transition: opacity 2s ease, transform 3s ease;
+    z-index: 1;
+}
+
+body.open .bg-revealed {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Interface Superior */
+.interface {
+    position: relative;
+    z-index: 20;
+    padding-top: 30px;
+    pointer-events: none;
+}
+
+.interface button {
+    pointer-events: auto;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.8);
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #e0e0e0;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.9);
+    margin-bottom: 20px;
+}
+
+button {
+    background: linear-gradient(135deg, #d4af37, #aa7c11);
+    color: #1a1a1a;
+    font-weight: bold;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.7);
+}
+
+/* Sinos Flutuantes Aleatórios */
+.bell {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    z-index: 15;
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.7));
+    transition: transform 0.2s ease, filter 0.3s ease;
+    animation: float 3s ease-in-out infinite alternate;
+}
+
+.bell:hover {
+    transform: scale(1.2) rotate(10deg) !important;
+    filter: drop-shadow(0 0 20px #ffd700);
+}
+
+.bell svg {
+    width: 100%;
+    height: 100%;
+    fill: #ffd700;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px) rotate(-5deg); }
+    100% { transform: translateY(-15px) rotate(5deg); }
+}
